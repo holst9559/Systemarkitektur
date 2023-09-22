@@ -1,10 +1,12 @@
 package org.example.Uppgift1;
 
 public abstract class BaseDiscount implements Discount{
-    private Discount nextDiscount;
+    Discount nextDiscount;
+    protected String description;
 
     public BaseDiscount(Discount nextDiscount) {
         this.nextDiscount = nextDiscount;
+        this.description = "";
     }
 
     @Override

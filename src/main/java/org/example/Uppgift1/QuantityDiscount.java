@@ -2,8 +2,8 @@ package org.example.Uppgift1;
 
 public class QuantityDiscount extends BaseDiscount{
 
-    public QuantityDiscount(Discount discount) {
-        super(discount);
+    public QuantityDiscount(Discount nextDiscount) {
+        super(nextDiscount);
     }
 
     @Override
@@ -14,5 +14,10 @@ public class QuantityDiscount extends BaseDiscount{
     @Override
     protected double calculateDiscount(Product product) {
         return 0;
+    }
+
+    @Override
+    public String getDescription(Product product) {
+        return super.getDescription(product);
     }
 }
