@@ -1,6 +1,11 @@
 package org.example.Uppgift1;
 
 public class MilkDiscount extends BaseDiscount{
+
+    public MilkDiscount(Discount discount) {
+        super(discount);
+    }
+
     @Override
     protected boolean isApplicable(Product product) {
         return false;
@@ -9,15 +14,5 @@ public class MilkDiscount extends BaseDiscount{
     @Override
     protected double calculateDiscount(Product product) {
         return 0;
-    }
-
-    @Override
-    public int apply(Product product) {
-        return 0;
-    }
-
-    @Override
-    public String getDescription(Product product) {
-        return null;
     }
 }

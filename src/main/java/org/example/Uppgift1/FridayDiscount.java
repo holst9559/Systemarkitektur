@@ -1,6 +1,11 @@
 package org.example.Uppgift1;
 
 public class FridayDiscount extends BaseDiscount{
+
+    public FridayDiscount(Discount discount) {
+        super(discount);
+    }
+
     @Override
     protected boolean isApplicable(Product product) {
         return false;
@@ -11,13 +16,4 @@ public class FridayDiscount extends BaseDiscount{
         return 0;
     }
 
-    @Override
-    public int apply(Product product) {
-        return 0;
-    }
-
-    @Override
-    public String getDescription(Product product) {
-        return null;
-    }
 }
