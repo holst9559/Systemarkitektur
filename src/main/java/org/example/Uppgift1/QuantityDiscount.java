@@ -20,7 +20,7 @@ public class QuantityDiscount extends BaseDiscount{
     public String getDescription(Product product) {
         if (isApplicable(product)) {
             return super.getDescription(product) +
-                    nextDiscount.getDescription(product) + "10kr rea per produkt vid köp av fler än 5 produkter!";
+                    nextDiscount.getDescription(product) + "10kr rea per produkt vid köp av fler än 5 produkter! ";
 
         }
         return super.getDescription(product) + nextDiscount.getDescription(product);

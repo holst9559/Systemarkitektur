@@ -20,7 +20,7 @@ public class MilkDiscount extends BaseDiscount{
     public String getDescription(Product product) {
         if (isApplicable(product)) {
             return super.getDescription(product) +
-                    nextDiscount.getDescription(product) + "5% rea på mjölk!";
+                    nextDiscount.getDescription(product) + "5% rea på mjölk! ";
 
         }
         return super.getDescription(product) + nextDiscount.getDescription(product);

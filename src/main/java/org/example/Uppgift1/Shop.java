@@ -7,15 +7,27 @@ import java.util.Date;
 
 public class Shop {
     public static void main (String[] args) {
-        Product bryggverk = new Product("Grainfather", 4299, 1);
+        Product bryggverk = new Product("Grainfather", 4299, 10);
         Product milk = new Product("Milk", 14.99,4);
-        Product malt = new Product("Pilsnermalt",12.95, 50);
-        //Discount chain på produkten
 
         Discount discountChain = new FridayDiscount(new MilkDiscount(new QuantityDiscount(new NoDiscount())));
 
+
         double discountedPriceMilk = discountChain.apply(milk);
-        System.out.println(discountedPriceMilk);
+        System.out.println("Du har valt att köpa " + milk.getQuantity() + " st " + milk.getName());
+        System.out.println("Pris innan rabbater: " + milk.getPrice());
+        System.out.println("Pris efter rabbater: " + (milk.getPrice() - discountedPriceMilk) + "kr");
+        System.out.println(discountChain.getDescription(milk));
+        System.out.println("Rabbatmängd i kr: " + discountedPriceMilk + "kr");
+        System.out.println("\t");
+
+        double discountedPriceBryggverk = discountChain.apply(bryggverk);
+        System.out.println("Du har valt att köpa " + bryggverk.getQuantity() + " st " + bryggverk.getName());
+        System.out.println("Pris innan rabbater: " + bryggverk.getPrice() + "kr");
+        System.out.println("Pris efter rabbater: " + (bryggverk.getPrice() - discountedPriceBryggverk) + "kr");
+        System.out.println(discountChain.getDescription(bryggverk));
+        System.out.println("Rabbatmängd i kr: " + discountedPriceBryggverk + "kr");
+
 
 
 
