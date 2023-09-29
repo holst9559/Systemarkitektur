@@ -8,16 +8,21 @@ public class QuantityDiscount extends BaseDiscount{
 
     @Override
     protected boolean isApplicable(Product product) {
-        return false;
+        return product.getQuantity() >= 5;
     }
 
     @Override
     protected double calculateDiscount(Product product) {
-        return 0;
+        return product.getQuantity() * 10;
     }
 
     @Override
     public String getDescription(Product product) {
-        return super.getDescription(product);
+        if (isApplicable(product)) {
+            return super.getDescription(product) +
+                    nextDiscount.getDescription(product) + "10kr rea per produkt vid köp av fler än 5 produkter!";
+
+        }
+        return super.getDescription(product) + nextDiscount.getDescription(product);
     }
 }

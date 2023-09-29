@@ -12,7 +12,7 @@ public class Shop {
         Product malt = new Product("Pilsnermalt",12.95, 50);
         //Discount chain på produkten
 
-        Discount discountChain = new FridayDiscount(new MilkDiscount(new QuantityDiscount()));
+        Discount discountChain = new FridayDiscount(new MilkDiscount(new QuantityDiscount(new NoDiscount())));
 
         double discountedPriceMilk = discountChain.apply(milk);
         System.out.println(discountedPriceMilk);

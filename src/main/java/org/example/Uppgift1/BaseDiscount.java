@@ -16,7 +16,10 @@ public abstract class BaseDiscount implements Discount{
             discount = calculateDiscount(product);
         }
 
-        discount += nextDiscount.apply(product);
+        if(nextDiscount != null){
+            discount += nextDiscount.apply(product);
+        }
+
         return discount;
     }
 
