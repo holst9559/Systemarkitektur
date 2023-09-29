@@ -1,9 +1,4 @@
 package org.example.Uppgift1;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Shop {
     public static void main (String[] args) {
@@ -27,10 +22,6 @@ public class Shop {
         System.out.println("Pris efter rabbater: " + (bryggverk.getPrice() - discountedPriceBryggverk) + "kr");
         System.out.println(discountChain.getDescription(bryggverk));
         System.out.println("Rabbatmängd i kr: " + discountedPriceBryggverk + "kr");
-
-
-
-
 
     }
 }
