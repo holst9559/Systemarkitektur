@@ -2,10 +2,10 @@ package org.example.Uppgift1;
 
 public class Product {
     private String name;
-    private int price;
+    private double price;
     private int quantity;
 
-    public Product(String name, int price, int quantity) {
+    public Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -19,7 +19,7 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

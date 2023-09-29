@@ -10,13 +10,19 @@ public abstract class BaseDiscount implements Discount{
     }
 
     @Override
-    public int apply(Product product) {
-        return 0;
+    public double apply(Product product) {
+        double discount = 0;
+        if (isApplicable(product)) {
+            discount = calculateDiscount(product);
+        }
+
+        discount += nextDiscount.apply(product);
+        return discount;
     }
 
     @Override
     public String getDescription(Product product) {
-        return null;
+        return "";
     }
 
     protected abstract boolean isApplicable(Product product);
